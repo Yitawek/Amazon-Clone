@@ -1,0 +1,158 @@
+/* ============ PRODUCT CARD ============ */
+.product_card {
+  width: 260px;
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.25s ease;
+}
+
+.product_card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.product_card img {
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Title */
+.product_card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  height: 45px;
+  overflow: hidden;
+  line-height: 1.35;
+  color: #222;
+}
+
+/* Price + Rating Container */
+.product_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #b12704;
+}
+
+.rating {
+  color: #ffa41c;
+  font-size: 14px;
+}
+
+/* Button */
+.product_card button {
+  width: 100%;
+  padding: 10px;
+  background: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.product_card button:hover {
+  background: #f7ca00;
+}
+
+.product_card button:active {
+  transform: scale(0.97);
+}
+
+/* ============ FLEX MODE FOR DETAILS PAGE ============ */
+.product_flex {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 30px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 14px;
+}
+
+.product_flex img {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+}
+
+.product_flex h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  width: 500px;
+  margin-bottom: 12px;
+}
+
+.product_flex button {
+  width: 500px;
+  padding: 12px 20px;
+  background: #222;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s ease;
+}
+
+.product_flex button:hover {
+  background: #000;
+}
+
+.product_flex:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Responsive Fix for Detail Page */
+@media (max-width: 768px) {
+  .product_flex {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .product_flex img {
+    width: 80%;
+  }
+}
+
+/* ============ PRODUCTS GRID ============ */
+.products_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* ============ CATEGORY TITLE ============ */
+.category_title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  text-transform: capitalize;
+  margin: 25px 0;
+  text-align: center;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #eee;
+  letter-spacing: 0.8px;
+}
