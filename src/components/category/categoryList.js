@@ -10,18 +10,18 @@ export const categories = [
     image: electronicsImg,
   },
   {
-    title: "Jewelry",
-    name: "jewelry",
+    title: "jewelery",
+    name: "jewelery",
     image: jewelryImg,
   },
   {
     title: "Men's Clothing",
-    name: "mens_clothing",
+    name: "men's clothing",
     image: mensClothingImg,
   },
   {
     title: "Women's Clothing",
-    name: "womens_clothing",
+    name: "women's clothing",
     image: womensClothingImg,
   },
 ];
