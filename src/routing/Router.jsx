@@ -9,7 +9,7 @@ import Orders from "../pages/Orders/Orders.jsx";
 import Auth from "../pages/Auth/Auth.jsx";
 import SignUp from "../pages/Auth/SignUp.jsx";
 import Results from "../pages/Results/Results";
-import ProtectedRoute from "../components/protectedRoute/protectedRoute.jsx";
+import ProtectedRoute from "../components/protectedRoute/ProtectedRoute.jsx";
 
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
