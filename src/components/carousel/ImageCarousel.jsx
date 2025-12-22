@@ -6,23 +6,23 @@ import styles from "./ImageCarousel.module.css";
 
 function ImageCarousel() {
   return (
-    <div>
+    <section className={styles.carousel}>
       <ResponsiveCarousel
-        autoPlay={true}
-        infiniteLoop={true}
+        autoPlay
+        infiniteLoop
         showIndicators={false}
         showThumbs={false}
+        showStatus={false}
       >
-        {img.map((imageItemLink, index) => (
-          <div key={index}>
-            <img src={imageItemLink} alt={`slide-${index}`} />
+        {img.map((src, index) => (
+          <div key={index} className={styles.slide}>
+            <img src={src} alt={`Promotional banner ${index + 1}`} />
           </div>
         ))}
       </ResponsiveCarousel>
 
-      {/* Fade overlay */}
-      <div className={styles.hero_img}></div>
-    </div>
+      <div className={styles.fadeOverlay} aria-hidden="true" />
+    </section>
   );
 }
 

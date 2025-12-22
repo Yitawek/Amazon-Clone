@@ -1,0 +1,539 @@
+.paymentContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  min-height: calc(100vh - 60px);
+}
+
+.paymentHeader {
+  background: white;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.amazonLogoHeader {
+  font-size: 32px;
+  font-weight: bold;
+  color: #232f3e;
+  margin-bottom: 20px;
+}
+
+.amazonLogoHeader a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.checkoutInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkoutTitle {
+  font-size: 28px;
+  color: #0f1111;
+  margin: 0;
+}
+
+.secureCheckout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #007600;
+  font-weight: 500;
+}
+
+.lockIcon {
+  font-size: 18px;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  background: #f0f2f2;
+  border-radius: 4px;
+}
+
+.step {
+  color: #565959;
+  font-size: 14px;
+  padding: 5px 10px;
+}
+
+.activeStep {
+  color: #0f1111;
+  font-weight: bold;
+  border-bottom: 2px solid #f90;
+}
+
+.emptyBasket {
+  text-align: center;
+  padding: 40px;
+  background: white;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.emptyBasket h2 {
+  color: #0f1111;
+  margin-bottom: 20px;
+}
+
+.emptyBasket p {
+  color: #565959;
+  margin-bottom: 30px;
+}
+
+.continueShopping {
+  display: inline-block;
+  background: #ffd814;
+  color: #0f1111;
+  padding: 10px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  border: 1px solid #fcd200;
+}
+
+.continueShopping:hover {
+  background: #f7ca00;
+}
+
+.paymentContent {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 30px;
+}
+
+.paymentLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.paymentSection {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.sectionHeader h2 {
+  font-size: 18px;
+  color: #0f1111;
+  margin: 0;
+}
+
+.editBtn {
+  background: none;
+  border: 1px solid #d5d9d9;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #0f1111;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.editBtn:hover {
+  background-color: #f7f7f7;
+}
+
+.addressCard {
+  line-height: 1.6;
+}
+
+.addressInfo p {
+  margin: 5px 0;
+  color: #0f1111;
+}
+
+.defaultAddressCheckbox,
+.defaultPaymentCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  color: #0f1111;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.paymentMethods {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.paymentOption {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.paymentOption.active {
+  border-color: #e77600;
+  box-shadow: 0 0 3px 2px rgba(228, 121, 17, 0.5);
+}
+
+.paymentLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.methodName {
+  font-weight: 500;
+}
+
+.methodIcons {
+  display: flex;
+  gap: 5px;
+}
+
+.cardIcon {
+  padding: 2px 6px;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.cardIcon.visa {
+  background: #1a1f71;
+  color: white;
+}
+
+.cardIcon.mastercard {
+  background: #ff5f00;
+  color: white;
+}
+
+.cardIcon.amex {
+  background: #0070d2;
+  color: white;
+}
+
+.methodBadge {
+  background: #ffd814;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.cardForm,
+.giftCardForm {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #0f1111;
+  font-size: 14px;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #a6a6a6;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: #007185;
+  box-shadow: 0 0 0 3px #c8f3fa;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.cvvInfo {
+  margin-left: 10px;
+  color: #007185;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.cvvInfo:hover {
+  text-decoration: underline;
+}
+
+.applyGiftCard {
+  background: #ffd814;
+  border: 1px solid #fcd200;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.applyGiftCard:hover {
+  background: #f7ca00;
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.orderItem {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.itemImage {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.itemDetails h4 {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  color: #0f1111;
+}
+
+.itemQuantity {
+  margin: 0;
+  color: #565959;
+  font-size: 12px;
+}
+
+.itemPrice {
+  margin: 5px 0 0 0;
+  font-weight: bold;
+  color: #0f1111;
+}
+
+/* Right Column Styles */
+.paymentRight {
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.orderSummary {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.orderSummary h3 {
+  margin: 0 0 20px 0;
+  color: #0f1111;
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #0f1111;
+  font-size: 14px;
+}
+
+.summaryRow.total {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+  font-size: 18px;
+}
+
+.freeShipping {
+  color: #007600;
+  font-size: 14px;
+  margin: 10px 0;
+  padding: 10px;
+  background: #f0f9f0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkIcon {
+  color: #007600;
+  font-weight: bold;
+}
+
+.securePayment {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #007600;
+  font-size: 14px;
+  margin: 20px 0;
+  padding: 10px;
+  background: #f0f9f0;
+  border-radius: 4px;
+}
+
+.placeOrderBtn {
+  width: 100%;
+  background: #ffd814;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #0f1111;
+  margin-bottom: 15px;
+  transition: background 0.2s;
+}
+
+.placeOrderBtn:hover {
+  background: #f7ca00;
+}
+
+.placeOrderBtn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.orderTerms {
+  font-size: 12px;
+  color: #565959;
+  line-height: 1.4;
+}
+
+.orderTerms a {
+  color: #007185;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.orderTerms a:hover {
+  text-decoration: underline;
+}
+
+.returnPolicy {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  color: #007600;
+}
+
+.needHelp {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.needHelp h4 {
+  margin: 0 0 15px 0;
+  color: #0f1111;
+  font-size: 16px;
+}
+
+.needHelp ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.needHelp li {
+  margin-bottom: 8px;
+}
+
+.needHelp a {
+  color: #007185;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.needHelp a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .paymentContent {
+    grid-template-columns: 1fr;
+  }
+
+  .paymentRight {
+    position: static;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .checkoutInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .steps {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .step {
+    width: 100%;
+  }
+}
+
+.paymentCardContainer {
+  max-width: 360px;
+  width: 100%;
+  margin: 30px;
+}
+
+.payBtn {
+  padding: 8px 12px;
+  margin: 12px;
+  color: #0f1111;
+  background-color: #f7ca00;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+}

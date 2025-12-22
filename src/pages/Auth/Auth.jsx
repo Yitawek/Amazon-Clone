@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import Style from "./signUp.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FadeLoader } from "react-spinners";
 import LayOut from "../../components/layOut/LayOut";
 import { auth } from "../../Utility/firebase.js";
@@ -19,6 +19,8 @@ function Auth() {
 
   const [{ user }, dispatch] = useContext(DataContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  const msg = location.state?.msg;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,7 +42,7 @@ function Auth() {
           type: type.SET_USER,
           user: userInfo.user,
         });
-        navigate("/");
+        navigate(location?.state?.redirect || "/");
       } else {
         setLoading({ signIn: false, signUp: true });
 
@@ -77,8 +79,11 @@ function Auth() {
           <h1>Sign In</h1>
 
           <form onSubmit={handleSubmit}>
-            {error && <p className={Style.error_message}>{error}</p>}
-
+            {error ? (
+              <p className={Style.error_message}>{error}</p>
+            ) : (
+              msg && <p className={Style.error_message}>{msg}</p>
+            )}
             <div className={Style.input_group}>
               <label htmlFor="email">Email</label>
               <input
@@ -90,7 +95,6 @@ function Auth() {
                 required
               />
             </div>
-
             <div className={Style.input_group}>
               <label htmlFor="password">Password</label>
               <input
@@ -102,7 +106,6 @@ function Auth() {
                 required
               />
             </div>
-
             <button
               type="submit"
               name="signin"

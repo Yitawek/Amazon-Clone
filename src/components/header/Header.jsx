@@ -1,16 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { BsSearch } from "react-icons/bs";
-import { BiCart } from "react-icons/bi";
+import { BiCart, BiMenu, BiX } from "react-icons/bi";
 import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
 import { DataContext } from "../dataProvider/DataProvider";
 import { auth } from "../../Utility/firebase.js";
 
 function Header() {
-  const [{ user, basket }, dispatch] = useContext(DataContext);
-  const totalItem = basket?.reduce((amount, item) => {
-    return item.amount + amount;
-  }, 0);
+  const [{ user, basket }] = useContext(DataContext);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const totalItem = basket?.reduce((amount, item) => amount + item.amount, 0);
 
   return (
     <header className={styles.header}>
@@ -27,27 +27,41 @@ function Header() {
       </div>
 
       {/* SEARCH BAR */}
-      <div className={styles.header_search}>
-        <select className={styles.header_select}>
-          <option value="">All</option>
-        </select>
+      <div className={styles.header_search_wrapper}>
+        <div className={styles.header_search}>
+          <select className={styles.header_select}>
+            <option value="">All</option>
+          </select>
 
-        <input
-          type="text"
-          placeholder="Search Amazon"
-          className={styles.header_input}
-        />
+          <input
+            type="text"
+            placeholder="Search Amazon"
+            className={styles.header_input}
+          />
 
-        <button className={styles.header_searchIcon}>
-          <BsSearch size={20} />
-        </button>
+          <button className={styles.header_searchIcon}>
+            <BsSearch size={20} />
+          </button>
+        </div>
       </div>
 
+      {/* MOBILE MENU TOGGLE */}
+      <button
+        className={styles.menu_toggle}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? <BiX size={28} /> : <BiMenu size={28} />}
+      </button>
+
       {/* RIGHT SECTION */}
-      <div className={styles.header_right}>
+      <nav
+        className={`${styles.header_right} ${
+          menuOpen ? styles.mobile_open : ""
+        }`}
+      >
         {/* Language */}
         <div className={styles.header_lang}>
-          <img src="/flag.png" alt="flag" />
+          <img src="/flag.jpg" alt="flag" />
           <span>EN</span>
         </div>
 
@@ -58,12 +72,7 @@ function Header() {
               <span className={styles.small_text}>
                 Hello, {user?.email?.split("@")[0]}
               </span>
-              <span
-                className={styles.bold_text}
-                onClick={() => {
-                  auth.signOut();
-                }}
-              >
+              <span className={styles.bold_text} onClick={() => auth.signOut()}>
                 Sign Out
               </span>
             </>
@@ -86,7 +95,7 @@ function Header() {
           <span className={styles.cart_count}>{totalItem}</span>
           <BiCart size={32} />
         </Link>
-      </div>
+      </nav>
     </header>
   );
 }
